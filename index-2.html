@@ -1,0 +1,1983 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mediabono - المنصة الاحترافية لصناعة المحتوى</title>
+    <meta name="description" content="منصة Mediabono توفر أحدث الأدوات والقوالب والمحتوى لصناع المحتوى المحترفين">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary-color: #00ff64;
+            --secondary-color: #00e676;
+            --accent-color: #00c853;
+            --dark-bg: #000;
+            --darker-bg: #001a0d;
+            --card-bg: rgba(0, 20, 10, 0.5);
+            --text-light: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.7);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+            scroll-behavior: smooth;
+        }
+        
+        /* تصميم القائمة العلوية الاحترافية */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 5px 30px rgba(0, 255, 100, 0.15);
+            z-index: 1000;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(0, 255, 100, 0.2);
+            transition: all 0.4s cubic-bezier(0.3, 0, 0, 1);
+            backdrop-filter: blur(10px);
+        }
+        
+        header.scrolled {
+            padding: 10px 5%;
+            background: rgba(0, 10, 5, 0.95);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .logo-header {
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-header img {
+            height: 40px;
+            margin-left: 10px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+            position: relative;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        
+        nav ul li a i {
+            margin-left: 8px;
+            font-size: 0.9rem;
+        }
+        
+        nav ul li a:hover {
+            color: var(--dark-bg);
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            transform: translateY(-2px);
+        }
+        
+        nav ul li a.active {
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            color: var(--dark-bg);
+            box-shadow: 0 5px 15px rgba(0, 255, 100, 0.3);
+        }
+        
+        .nav-cta {
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            color: var(--dark-bg) !important;
+            font-weight: 700;
+            padding: 10px 25px !important;
+            box-shadow: 0 5px 20px rgba(0, 255, 100, 0.3);
+        }
+        
+        .nav-cta:hover {
+            transform: translateY(-3px) !important;
+            box-shadow: 0 8px 25px rgba(0, 255, 100, 0.4) !important;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+        
+        /* القسم البطولي الاحترافي */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 150px 5% 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 50%, rgba(0, 255, 100, 0.1) 0%, transparent 50%);
+            z-index: -1;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .hero-text {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-image {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(0, 255, 100, 0.3);
+            transform: perspective(1000px) rotateY(-10deg);
+            transition: transform 0.5s ease;
+        }
+        
+        .hero-image img:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+        
+        .main-logo {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+        }
+        
+        .hero-description {
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            color: var(--text-light);
+            opacity: 0.9;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .primary-btn, .secondary-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.3, 0, 0, 1);
+            font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .primary-btn {
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            color: var(--dark-bg);
+            box-shadow: 0 5px 25px rgba(0, 255, 100, 0.3);
+        }
+        
+        .primary-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 255, 100, 0.5);
+            background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
+        }
+        
+        .secondary-btn {
+            background: transparent;
+            color: var(--secondary-color);
+            border: 2px solid var(--secondary-color);
+        }
+        
+        .secondary-btn:hover {
+            background: rgba(0, 255, 100, 0.1);
+            transform: translateY(-5px);
+        }
+        
+        .btn-icon {
+            margin-left: 10px;
+            font-size: 1.2rem;
+        }
+        
+        /* قسم الميزات الاحترافية */
+        .features-section {
+            padding: 100px 5%;
+            background: var(--darker-bg);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 60px;
+            line-height: 1.7;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .feature-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.5s cubic-bezier(0.3, 0, 0, 1);
+            border: 1px solid rgba(0, 255, 100, 0.2);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 255, 100, 0.1) 0%, transparent 100%);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 255, 100, 0.15);
+            border: 1px solid rgba(0, 255, 100, 0.5);
+        }
+        
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+        
+        .feature-icon {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .feature-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        .feature-desc {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+        
+        /* قسم التنزيلات الاحترافية */
+        .downloads-section {
+            padding: 100px 5%;
+            background: var(--dark-bg);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .downloads-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .downloads-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+        
+        .download-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 35px 30px;
+            text-align: center;
+            transition: all 0.5s cubic-bezier(0.3, 0, 0, 1);
+            border: 1px solid rgba(0, 255, 100, 0.2);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .download-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 255, 100, 0.1) 0%, transparent 100%);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .download-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 255, 100, 0.15);
+            border: 1px solid rgba(0, 255, 100, 0.5);
+        }
+        
+        .download-card:hover::before {
+            opacity: 1;
+        }
+        
+        .download-icon {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+        }
+        
+        .download-icon::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+        
+        .download-title {
+            font-size: 1.8rem;
+            margin: 25px 0 20px;
+            color: var(--secondary-color);
+        }
+        
+        .download-desc {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 35px;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            color: var(--dark-bg);
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0, 255, 100, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .download-btn:hover {
+            background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
+            box-shadow: 0 7px 20px rgba(0, 255, 100, 0.5);
+            transform: translateY(-3px);
+        }
+        
+        /* خيارات التصفية */
+        .filter-options {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 10px 25px;
+            background: rgba(0, 255, 100, 0.1);
+            color: var(--secondary-color);
+            border: 1px solid rgba(0, 255, 100, 0.3);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            color: var(--dark-bg);
+            box-shadow: 0 5px 15px rgba(0, 255, 100, 0.2);
+        }
+        
+        /* قسم التعليمات الاحترافية */
+        .instructions-section {
+            padding: 100px 5%;
+            background: var(--darker-bg);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .instructions-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            padding: 35px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            transition: all 0.5s cubic-bezier(0.3, 0, 0, 1);
+            border-left: 4px solid var(--primary-color);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .step::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 255, 100, 0.1) 0%, transparent 100%);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 255, 100, 0.1);
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        .step:hover::before {
+            opacity: 1;
+        }
+        
+        .step-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            min-width: 60px;
+            text-align: center;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .step-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+        
+        .step-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+        }
+        
+        .step-image {
+            max-width: 350px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 255, 100, 0.3);
+            transition: transform 0.5s ease;
+        }
+        
+        .step-image:hover {
+            transform: scale(1.03);
+        }
+        
+        /* قسم الشهادات والتوصيات */
+        .testimonials-section {
+            padding: 100px 5%;
+            background: var(--dark-bg);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .testimonials-slider {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            padding: 30px 10px;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        
+        .testimonials-slider::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .testimonial-card {
+            min-width: 350px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            scroll-snap-align: start;
+            transition: all 0.5s cubic-bezier(0.3, 0, 0, 1);
+            border: 1px solid rgba(0, 255, 100, 0.2);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 255, 100, 0.1) 0%, transparent 100%);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 255, 100, 0.15);
+            border: 1px solid rgba(0, 255, 100, 0.5);
+        }
+        
+        .testimonial-card:hover::before {
+            opacity: 1;
+        }
+        
+        .testimonial-content {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--secondary-color);
+        }
+        
+        .author-info h4 {
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        /* قسم الأسئلة الشائعة */
+        .faq-section {
+            padding: 100px 5%;
+            background: var(--darker-bg);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 255, 100, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            border: 1px solid rgba(0, 255, 100, 0.5);
+        }
+        
+        .faq-question {
+            padding: 20px 25px;
+            background: var(--card-bg);
+            color: var(--secondary-color);
+            font-size: 1.3rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: rgba(0, 255, 100, 0.1);
+        }
+        
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: rgba(0, 10, 5, 0.5);
+        }
+        
+        .faq-answer p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            padding: 20px 0;
+        }
+        
+        .faq-item.active .faq-question {
+            background: rgba(0, 255, 100, 0.1);
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+        
+        /* قسم الاشتراك */
+        .cta-section {
+            padding: 100px 5%;
+            background: linear-gradient(135deg, var(--dark-bg), var(--darker-bg));
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 40px;
+            background: var(--card-bg);
+            border-radius: 25px;
+            border: 1px solid rgba(0, 255, 100, 0.3);
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+        
+        .cta-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 255, 100, 0.1) 0%, transparent 100%);
+            z-index: -1;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            line-height: 1.3;
+        }
+        
+        .cta-description {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 18px 25px;
+            border-radius: 50px;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            font-size: 1.1rem;
+            border: 1px solid rgba(0, 255, 100, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(0, 255, 100, 0.7);
+            box-shadow: 0 0 0 3px rgba(0, 255, 100, 0.2);
+        }
+        
+        .newsletter-btn {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            bottom: 5px;
+            padding: 0 30px;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            color: var(--dark-bg);
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-btn:hover {
+            background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
+            transform: translateX(5px);
+        }
+        
+        /* التذييل الاحترافي */
+        footer {
+            background: linear-gradient(90deg, var(--dark-bg), var(--darker-bg), var(--dark-bg));
+            padding: 80px 5% 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        
+        .footer-about p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+        
+        .footer-links h3, .footer-contact h3 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-links h3::after, .footer-contact h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            transform: translateX(-5px);
+        }
+        
+        .footer-links a i {
+            font-size: 0.9rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .contact-icon {
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            margin-top: 3px;
+        }
+        
+        .contact-text {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(0, 255, 100, 0.1);
+            color: var(--secondary-color);
+            border-radius: 50%;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            color: var(--dark-bg);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 255, 100, 0.3);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0, 255, 100, 0.1);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        /* تأثيرات ثلاثية الأبعاد للخلفية */
+        #bg3d {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.15;
+        }
+        
+        /* تأثيرات الفيديو الخلفية */
+        .video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.1;
+        }
+        
+        /* تصميم متجاوب */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 30px;
+            }
+            
+            .hero-text {
+                order: 2;
+            }
+            
+            .hero-image {
+                order: 1;
+            }
+            
+            .hero-stats {
+                justify-content: center;
+            }
+            
+            .cta-buttons {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .main-logo {
+                font-size: 2.8rem;
+            }
+            
+            .hero-description {
+                font-size: 1.1rem;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 10, 5, 0.95);
+                padding: 20px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                transform: translateY(-150%);
+                transition: transform 0.4s ease;
+                z-index: 999;
+                backdrop-filter: blur(10px);
+            }
+            
+            nav.active {
+                transform: translateY(0);
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul li {
+                margin-left: 0;
+            }
+            
+            nav ul li a {
+                justify-content: center;
+                padding: 12px;
+            }
+            
+            .step {
+                flex-direction: column;
+            }
+            
+            .step-image {
+                max-width: 100%;
+                margin-top: 20px;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .newsletter-btn {
+                position: static;
+                width: 100%;
+                padding: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .main-logo {
+                font-size: 2.2rem;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .primary-btn, .secondary-btn {
+                width: 100%;
+            }
+            
+            .testimonial-card {
+                min-width: 280px;
+            }
+        }
+        
+        /* تأثيرات الحركة */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* تأثيرات التحميل */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark-bg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .preloader-logo {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 30px;
+        }
+        
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(0, 255, 100, 0.2);
+            border-radius: 50%;
+            border-top-color: var(--primary-color);
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* تأثيرات خاصة */
+        .glow {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 10px rgba(0, 255, 100, 0.5);
+            }
+            to {
+                box-shadow: 0 0 20px rgba(0, 255, 100, 0.8), 0 0 30px rgba(0, 255, 100, 0.4);
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(0, 255, 100, 0.7);
+            }
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 10px rgba(0, 255, 100, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(0, 255, 100, 0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- تحميل أولي -->
+    <div class="preloader">
+        <div class="preloader-logo">Mediabono</div>
+        <div class="loader"></div>
+    </div>
+    
+    <!-- خلفية ثلاثية الأبعاد -->
+    <canvas id="bg3d"></canvas>
+    
+    <!-- الترويسة -->
+    <header id="main-header">
+        <div class="logo-header">
+            <img src="https://via.placeholder.com/40x40" alt="Mediabono Logo">
+            Mediabono
+        </div>
+        
+        <button class="mobile-menu-btn" id="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <nav id="main-nav">
+            <ul>
+                <li><a href="#home" class="active"><i class="fas fa-home"></i> الرئيسية</a></li>
+                <li><a href="#features"><i class="fas fa-star"></i> الميزات</a></li>
+                <li><a href="#downloads"><i class="fas fa-download"></i> التحميلات</a></li>
+                <li><a href="#how-to"><i class="fas fa-question-circle"></i> كيفية التنزيل</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> اتصل بنا</a></li>
+                <li><a href="https://www.tiktok.com/@mohssin.bm_no1" target="_blank" class="nav-cta"><i class="fab fa-tiktok"></i> قناتنا</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- القسم البطولي -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text animate-on-scroll">
+                <h1 class="main-logo">منصة Mediabono لصناعة المحتوى الاحترافي</h1>
+                <p class="hero-description">
+                    اكتشف عالمًا من الأدوات والقوالب والموارد المصممة خصيصًا لصناع المحتوى الطموحين. انطلق بقناتك إلى آفاق جديدة مع حلولنا المتكاملة.
+                </p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">أداة وتصميم</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">50K+</div>
+                        <div class="stat-label">مستخدم نشط</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">دعم فني</div>
+                    </div>
+                </div>
+                
+                <div class="cta-buttons">
+                    <a href="#downloads" class="primary-btn pulse">
+                        <i class="fas fa-download btn-icon"></i> ابدأ التحميل الآن
+                    </a>
+                    <a href="#features" class="secondary-btn">
+                        <i class="fas fa-play-circle btn-icon"></i> شاهد الفيديو التعريفي
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-image animate-on-scroll">
+                <img src="https://via.placeholder.com/600x400" alt="Mediabono Dashboard Preview" class="glow">
+            </div>
+        </div>
+    </section>
+    
+    <!-- قسم الميزات -->
+    <section class="features-section" id="features">
+        <div class="features-container">
+            <h2 class="section-title animate-on-scroll">لماذا تختار Mediabono؟</h2>
+            <p class="section-subtitle animate-on-scroll">نقدم لك مجموعة متكاملة من الحلول المصممة لتحقيق النجاح في عالم صناعة المحتوى</p>
+            
+            <div class="features-grid">
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="feature-title">أدوات سريعة وفعالة</h3>
+                    <p class="feature-desc">
+                        وفر وقتك وجهدك مع أدواتنا الذكية التي تعمل بسلاسة وكفاءة عالية لتحقيق أفضل النتائج في أقل وقت ممكن.
+                    </p>
+                </div>
+                
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="feature-title">جودة احترافية</h3>
+                    <p class="feature-desc">
+                        تم تصميم جميع منتجاتنا بأعلى معايير الجودة لتلبية احتياجات المحترفين في مجال صناعة المحتوى.
+                    </p>
+                </div>
+                
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3 class="feature-title">تحديثات مستمرة</h3>
+                    <p class="feature-desc">
+                        نحن نطور منتجاتنا باستمرار لنضمن لك الحصول على أحدث الأدوات والتقنيات في مجال صناعة المحتوى.
+                    </p>
+                </div>
+                
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="feature-title">دعم فني متكامل</h3>
+                    <p class="feature-desc">
+                        فريق دعم فني متاح على مدار الساعة لمساعدتك في حل أي مشكلة تواجهك مع منتجاتنا.
+                    </p>
+                </div>
+                
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="feature-title">دورات تعليمية</h3>
+                    <p class="feature-desc">
+                        وفرنا لك دورات تعليمية متكاملة لمساعدتك على إتقان صناعة المحتوى وتحقيق النجاح في منصات التواصل.
+                    </p>
+                </div>
+                
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="feature-title">مجتمع تفاعلي</h3>
+                    <p class="feature-desc">
+                        انضم إلى مجتمعنا النشط من صناع المحتوى وتبادل الخبرات والأفكار مع المحترفين في المجال.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- قسم التنزيلات -->
+    <section class="downloads-section" id="downloads">
+        <div class="downloads-container">
+            <h2 class="section-title animate-on-scroll">أحدث التحميلات</h2>
+            <p class="section-subtitle animate-on-scroll">اختر من بين مئات الأدوات والقوالب الجاهزة لتعزيز محتواك</p>
+            
+            <div class="filter-options animate-on-scroll">
+                <button class="filter-btn active" data-filter="all">الكل</button>
+                <button class="filter-btn" data-filter="apps">التطبيقات</button>
+                <button class="filter-btn" data-filter="templates">القوالب</button>
+                <button class="filter-btn" data-filter="sounds">الأصوات</button>
+                <button class="filter-btn" data-filter="backgrounds">الخلفيات</button>
+                <button class="filter-btn" data-filter="courses">الدورات</button>
+            </div>
+            
+            <div class="downloads-grid">
+                <!-- كاب كات برو -->
+                <div class="download-card animate-on-scroll" data-category="apps">
+                    <div class="download-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="download-title">كاب كات برو</h3>
+                    <p class="download-desc">
+                        الإصدار الاحترافي من تطبيق كاب كات مع جميع الميزات المميزة والجودة العالية. مناسب للمونتاج المحترف.
+                    </p>
+                    <a href="https://drive.google.com/file/d/EXAMPLE_LINK_1/view?usp=sharing" target="_blank" class="download-btn">
+                        <i class="fab fa-google-drive"></i> تنزيل الآن
+                    </a>
+                </div>
+                
+                <!-- حزمة الأصوات -->
+                <div class="download-card animate-on-scroll" data-category="sounds">
+                    <div class="download-icon">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3 class="download-title">حزمة الأصوات المميزة</h3>
+                    <p class="download-desc">
+                        مجموعة مميزة من الأصوات والمؤثرات الصوتية لمقاطعك، جاهزة للاستخدام الفوري. أكثر من 100 صوت احترافي.
+                    </p>
+                    <a href="https://drive.google.com/file/d/EXAMPLE_LINK_2/view?usp=sharing" target="_blank" class="download-btn">
+                        <i class="fab fa-google-drive"></i> تنزيل الآن
+                    </a>
+                </div>
+                
+                <!-- خلفيات متحركة -->
+                <div class="download-card animate-on-scroll" data-category="backgrounds">
+                    <div class="download-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3 class="download-title">خلفيات متحركة 4K</h3>
+                    <p class="download-desc">
+                        مجموعة من الخلفيات المتحركة عالية الجودة لاستخدامها في المونتاج والإنتاج. جودة 4K مع تأثيرات مذهلة.
+                    </p>
+                    <a href="https://drive.google.com/file/d/EXAMPLE_LINK_3/view?usp=sharing" target="_blank" class="download-btn">
+                        <i class="fab fa-google-drive"></i> تنزيل الآن
+                    </a>
+                </div>
+                
+                <!-- قوالب مونتاج -->
+                <div class="download-card animate-on-scroll" data-category="templates">
+                    <div class="download-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3 class="download-title">قوالب مونتاج احترافية</h3>
+                    <p class="download-desc">
+                        مجموعة من القوالب الجاهزة للمونتاج لتسريع عملك وتقديم محتوى احترافي في وقت قياسي.
+                    </p>
+                    <a href="https://drive.google.com/file/d/EXAMPLE_LINK_4/view?usp=sharing" target="_blank" class="download-btn">
+                        <i class="fab fa-google-drive"></i> تنزيل الآن
+                    </a>
+                </div>
+                
+                <!-- أدوات التسويق -->
+                <div class="download-card animate-on-scroll" data-category="apps">
+                    <div class="download-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="download-title">أدوات التسويق الذكية</h3>
+                    <p class="download-desc">
+                        حزمة متكاملة من الأدوات الذكية لتحليل أداء قناتك وزيادة تفاعل المتابعين ونجاح المحتوى.
+                    </p>
+                    <a href="https://drive.google.com/file/d/EXAMPLE_LINK_5/view?usp=sharing" target="_blank" class="download-btn">
+                        <i class="fab fa-google-drive"></i> تنزيل الآن
+                    </a>
+                </div>
+                
+                <!-- دورة احترافية -->
+                <div class="download-card animate-on-scroll" data-category="courses">
+                    <div class="download-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="download-title">دورة صناعة المحتوى</h3>
+                    <p class="download-desc">
+                        دورة متكاملة لاحتراف صناعة المحتوى وتطوير قناتك من البداية حتى الاحتراف مع شهادة معتمدة.
+                    </p>
+                    <a href="https://drive.google.com/file/d/EXAMPLE_LINK_6/view?usp=sharing" target="_blank" class="download-btn">
+                        <i class="fab fa-google-drive"></i> تنزيل الآن
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- قسم كيفية التنزيل -->
+    <section class="instructions-section" id="how-to">
+        <div class="instructions-container">
+            <h2 class="section-title animate-on-scroll">كيفية تنزيل واستخدام منتجاتنا</h2>
+            <p class="section-subtitle animate-on-scroll">اتبع هذه الخطوات البسيطة لتحميل واستخدام جميع منتجاتنا بسهولة</p>
+            
+            <div class="steps-container">
+                <div class="step animate-on-scroll">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>الانتقال إلى رابط التحميل</h3>
+                        <p>اضغط على زر التحميل الخاص بالملف الذي تريده، سيتم نقلك إلى صفحة الملف على Google Drive حيث يمكنك معاينة الملف قبل التحميل.</p>
+                    </div>
+                    <img src="https://via.placeholder.com/350x200" alt="Step 1" class="step-image">
+                </div>
+                
+                <div class="step animate-on-scroll">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>تسجيل الدخول إلى حساب Google</h3>
+                        <p>إذا لم تكن مسجلاً الدخول، سيطلب منك تسجيل الدخول إلى حساب Google الخاص بك للوصول إلى الملف. يمكنك استخدام أي حساب Google لديك.</p>
+                    </div>
+                    <img src="https://via.placeholder.com/350x200" alt="Step 2" class="step-image">
+                </div>
+                
+                <div class="step animate-on-scroll">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>تحميل الملف إلى جهازك</h3>
+                        <p>اضغط على أيقونة التحميل (السهم لأسفل) في شريط الأدوات العلوي لحفظ الملف على جهازك. يمكنك اختيار مكان الحفظ المناسب لك.</p>
+                    </div>
+                    <img src="https://via.placeholder.com/350x200" alt="Step 3" class="step-image">
+                </div>
+                
+                <div class="step animate-on-scroll">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>فك ضغط الملف (إذا لزم الأمر)</h3>
+                        <p>بعض الملفات تكون مضغوطة بصيغة ZIP لضمان سرعة التحميل. استخدم برنامج مثل WinRAR أو 7-Zip لاستخراج المحتويات بسهولة.</p>
+                    </div>
+                    <img src="https://via.placeholder.com/350x200" alt="Step 4" class="step-image">
+                </div>
+                
+                <div class="step animate-on-scroll">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>تثبيت التطبيق أو استخدام الملف</h3>
+                        <p>للتطبيقات، افتح ملف التثبيت (EXE أو APK) واتبع التعليمات الظاهرة على الشاشة. للملفات الأخرى، افتحها بالبرنامج المناسب.</p>
+                    </div>
+                    <img src="https://via.placeholder.com/350x200" alt="Step 5" class="step-image">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- قسم الشهادات والتوصيات -->
+    <section class="testimonials-section">
+        <div class="testimonials-container">
+            <h2 class="section-title animate-on-scroll">آراء عملائنا</h2>
+            <p class="section-subtitle animate-on-scroll">انظر ماذا يقول صناع المحتوى عن تجربتهم مع منصة Mediabono</p>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-card animate-on-scroll">
+                    <p class="testimonial-content">
+                        "لقد غيرت Mediabono طريقة عملي بالكامل! الأدوات والقوالب ساعدتني في مضاعفة إنتاجيتي وتحسين جودة محتواي بشكل كبير."
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/60x60" alt="User 1" class="author-avatar">
+                        <div class="author-info">
+                            <h4>أحمد محمد</h4>
+                            <p>يوتيوبر - 500K متابع</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card animate-on-scroll">
+                    <p class="testimonial-content">
+                        "الدعم الفني الممتاز والمنتجات عالية الجودة جعلوا تجربتي مع Mediabono لا تضاهى. أوصي بها لكل صانع محتوى جاد."
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/60x60" alt="User 2" class="author-avatar">
+                        <div class="author-info">
+                            <h4>سارة الخالد</h4>
+                            <p>مؤثرة على إنستغرام</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card animate-on-scroll">
+                    <p class="testimonial-content">
+                        "بعد استخدام منتجات Mediabono، زاد تفاعل متابعيني بنسبة 300%! القوالب الجاهزة وفرت لي ساعات من العمل الشاق."
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/60x60" alt="User 3" class="author-avatar">
+                        <div class="author-info">
+                            <h4>خالد الفهيد</h4>
+                            <p>صانع محتوى على تيك توك</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card animate-on-scroll">
+                    <p class="testimonial-content">
+                        "الدورات التعليمية غيرت طريقة تفكيري في صناعة المحتوى. الآن لدي استراتيجية واضحة ونمو مستمر في قناتي."
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/60x60" alt="User 4" class="author-avatar">
+                        <div class="author-info">
+                            <h4>نورا السعد</h4>
+                            <p>مدربة محتوى رقمي</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- قسم الأسئلة الشائعة -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <h2 class="section-title animate-on-scroll">الأسئلة الشائعة</h2>
+            <p class="section-subtitle animate-on-scroll">إجابات على أكثر الأسئلة التي تردنا من عملائنا</p>
+            
+            <div class="faq-list">
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        كيف يمكنني تنزيل الملفات من الموقع؟
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>يمكنك تنزيل الملفات بسهولة عن طريق الضغط على زر التحميل الموجود بجانب كل منتج. سيتم توجيهك إلى صفحة Google Drive حيث يمكنك معاينة الملف ثم تنزيله بالضغط على أيقونة التنزيل في شريط الأدوات العلوي.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        هل أحتاج إلى حساب مدفوع لاستخدام منتجاتكم؟
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>لا، جميع منتجاتنا متاحة للتحميل المجاني. نحن نقدم بعض المنتجات المميزة بأسعار رمزية لدعم استمرارية المنصة وتطويرها، ولكن الغالبية العظمى من أدواتنا وقوالبنا مجانية بالكامل.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        كيف يمكنني التواصل مع الدعم الفني؟
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>يتوفر فريق الدعم الفني على مدار الساعة عبر البريد الإلكتروني support@media-bono.com أو عبر وسائل التواصل الاجتماعي الخاصة بنا. متوسط وقت الرد لا يتجاوز 4 ساعات في أي وقت من اليوم.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        ما هي سياسة التحديثات للمنتجات؟
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نقوم بتحديث منتجاتنا بشكل دوري لضمان توافقها مع أحدث التقنيات ومعالجة أي مشكلات قد تظهر. يمكنك متابعة قناتنا على تيك توك أو الاشتراك في نشرتنا البريدية لتصلك إشعارات بالتحديثات الجديدة.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        هل تقدمون دورات تدريبية لصناعة المحتوى؟
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم، نوفر مجموعة من الدورات التدريبية الشاملة التي تغطي جميع جوانب صناعة المحتوى من البداية حتى الاحتراف. تتضمن الدورات شهادات إتمام معتمدة من المنصة.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- قسم الاشتراك -->
+    <section class="cta-section">
+        <div class="cta-container animate-on-scroll">
+            <h2 class="cta-title">انضم إلى مجتمع Mediabono اليوم!</h2>
+            <p class="cta-description">
+                اشترك في نشرتنا البريدية لتصلك آخر التحديثات والعروض الحصرية مباشرة إلى بريدك الإلكتروني
+            </p>
+            
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="أدخل بريدك الإلكتروني" required>
+                <button type="submit" class="newsletter-btn">اشترك الآن</button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- التذييل -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-about animate-on-scroll">
+                <div class="footer-logo">Mediabono</div>
+                <p>
+                    منصة متكاملة لصناع المحتوى الطموحين، نقدم أدوات وقوالب وموارد احترافية لمساعدتك في تحقيق النجاح في عالم صناعة المحتوى الرقمي.
+                </p>
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-telegram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links animate-on-scroll">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="#home"><i class="fas fa-chevron-left"></i> الرئيسية</a></li>
+                    <li><a href="#features"><i class="fas fa-chevron-left"></i> الميزات</a></li>
+                    <li><a href="#downloads"><i class="fas fa-chevron-left"></i> التحميلات</a></li>
+                    <li><a href="#how-to"><i class="fas fa-chevron-left"></i> كيفية التنزيل</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-left"></i> سياسة الخصوصية</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-left"></i> شروط الاستخدام</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact animate-on-scroll">
+                <h3>تواصل معنا</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
+                        <p class="contact-text">الرياض، المملكة العربية السعودية</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <p class="contact-text">contact@media-bono.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt contact-icon"></i>
+                        <p class="contact-text">+966 50 123 4567</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock contact-icon"></i>
+                        <p class="contact-text">الدعم الفني متاح 24/7</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright animate-on-scroll">
+            <p>جميع الحقوق محفوظة &copy; 2023 Mediabono | تم التصميم والتطوير باحترافية</p>
+        </div>
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // تحميل أولي
+        window.addEventListener('load', function() {
+            const preloader = document.querySelector('.preloader');
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500);
+            }, 1500);
+        });
+        
+        // القائمة المتنقلة
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mainNav = document.getElementById('main-nav');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // إغلاق القائمة عند النقر على رابط
+        document.querySelectorAll('#main-nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    mainNav.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        });
+        
+        // تأثير التمرير للقائمة
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // تنشيط عناصر القائمة عند التمرير
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav ul li a');
+        
+        window.addEventListener('scroll', function() {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= sectionTop - 300) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // تأثيرات الظهور عند التمرير
+        const animateElements = document.querySelectorAll('.animate-on-scroll');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        animateElements.forEach(element => {
+            observer.observe(element);
+        });
+        
+        // تصفية العناصر
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const downloadCards = document.querySelectorAll('.download-card');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // إزالة التنشيط من جميع الأزرار
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // تنشيط الزر الحالي
+                this.classList.add('active');
+                
+                const filterValue = this.getAttribute('data-filter');
+                
+                downloadCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // الأسئلة الشائعة
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', function() {
+                // إغلاق جميع العناصر الأخرى
+                faqItems.forEach(faq => {
+                    if (faq !== item) {
+                        faq.classList.remove('active');
+                    }
+                });
+                
+                // تبديل العنصر الحالي
+                item.classList.toggle('active');
+            });
+        });
+        
+        // خلفية ثلاثية الأبعاد
+        const bg3d = document.getElementById('bg3d');
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({
+            canvas: bg3d,
+            alpha: true
+        });
+        
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        
+        // إنشاء أشكال هندسية متعددة
+        const geometries = [
+            new THREE.IcosahedronGeometry(8, 0),
+            new THREE.TorusGeometry(10, 3, 16, 100),
+            new THREE.OctahedronGeometry(7, 0)
+        ];
+        
+        const material = new THREE.MeshBasicMaterial({ 
+            color: 0x00ff64,
+            wireframe: true,
+            transparent: true,
+            opacity: 0.8
+        });
+        
+        const objects = [];
+        
+        geometries.forEach((geometry, index) => {
+            const mesh = new THREE.Mesh(geometry, material);
+            mesh.position.x = (index - 1) * 15;
+            mesh.rotation.x = Math.random() * Math.PI;
+            mesh.rotation.y = Math.random() * Math.PI;
+            scene.add(mesh);
+            objects.push(mesh);
+        });
+        
+        camera.position.z = 30;
+        
+        // إضافة نقاط ضوئية
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlesCount = 1000;
+        
+        const posArray = new Float32Array(particlesCount * 3);
+        
+        for(let i = 0; i < particlesCount * 3; i++) {
+            posArray[i] = (Math.random() - 0.5) * 100;
+        }
+        
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        
+        const particlesMaterial = new THREE.PointsMaterial({
+            size: 0.15,
+            color: 0x00e676,
+            transparent: true,
+            opacity: 0.8
+        });
+        
+        const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+        scene.add(particlesMesh);
+        
+        // حركة الخلفية
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            objects.forEach((obj, index) => {
+                obj.rotation.x += 0.001 * (index + 1);
+                obj.rotation.y += 0.002 * (index + 1);
+            });
+            
+            particlesMesh.rotation.y += 0.0005;
+            
+            renderer.render(scene, camera);
+        }
+        
+        animate();
+        
+        // تكييف حجم الخلفية مع تغيير حجم النافذة
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+        
+        // تأثيرات خاصة للزر
+        const primaryBtn = document.querySelector('.primary-btn');
+        
+        primaryBtn.addEventListener('mousemove', function(e) {
+            const x = e.pageX - this.offsetLeft;
+            const y = e.pageY - this.offsetTop;
+            
+            this.style.setProperty('--x', `${x}px`);
+            this.style.setProperty('--y', `${y}px`);
+        });
+    </script>
+</body>
+</html>
